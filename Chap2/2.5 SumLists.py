@@ -1,5 +1,7 @@
 from NodePractice import UnorderedList
-
+''' goals: 1. account for linked lists of different length
+           2. solve problem when digits are in opposite order
+           '''
 
 ''' solved with recursion'''
 def SumLists(LL1,LL2):
@@ -15,5 +17,5 @@ Blist.AddMultiple([5,9,2])
 Alist.viewlinkedlist()
 Blist.viewlinkedlist()
 
-print RSumLists(Alist.head,Blist.head)
+print SumLists(Alist.head,Blist.head)
 
