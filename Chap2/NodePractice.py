@@ -25,6 +25,12 @@ class UnorderedList:
         temp.setNext(self.head) # pointing added node to previouse head node
         self.head = temp # assigning your new node to the head of the list
 
+    '''adds multiple items to a linked list'''
+    def AddMultiple(self,items):
+        for ii in range(len(items)):
+            self.add(items[-ii-1])
+
+
     '''returns length of passed list'''
     def length(self):
         current = self.head
@@ -79,6 +85,8 @@ class UnorderedList:
         while current.next != None:
             current = current.next
         current.next = newnode
+
+
     ''' returns final value from list assigns it to passed variable '''
     def pop(self):
         current = self.head
@@ -98,20 +106,10 @@ class UnorderedList:
             count += 1
         return current.data
 
-mylist = UnorderedList()
-# single direction linked list are like stacks
-mylist.add(24) # last item in linked list (first added)
-mylist.add(12)
-mylist.add(2)
-mylist.add(4)
-mylist.add(16) # first item in linked list (last added)
-mylist.append(5)
-mylist.append(8)
 
-# print UnorderedList.length(mylist)
-#print mylist.search(16)
-#mylist.remove(2)
-#print UnorderedList.length(mylist)
-print mylist.viewlinkedlist()
-print mylist.pop()
-# print mylist.index(5)
+
+
+
+
+
+

@@ -1,57 +1,38 @@
-class Node:
-    def __init__(self,inidata):
-        self.data = inidata
-        self.next = None
-
-''' creates linked list by setting init val as head'''
-class LinkedList:
-    def __init__(self,init):
-        self.head = Node(init)
-        self.next = None
+from NodePractice import UnorderedList
 
 
-    ''' view list for testing'''
-    def viewlinkedlist(self):
-        current = self.head
-        while current != None:
-            print current.data,
-            current = current.next
-    ''' adds new val to front of linked list'''
-    def add(self,val):
-        temp = Node(val)
-        temp.next = self.head
-        self.head = temp
+''' remove duplicates works but uses a buffer 
+        should try using a prev and cur to avoid this 
+        also what am I  passing here? a linked list should be 
+        the input'''
 
-    def RemoveDups(self):
-        valsinlist = [self.head.data]
-
-        cur = self.head.next
-        prev = self.head
-
-        while cur != None:
-            valsinlist.append(cur.data)
-            print valsinlist
-            if prev.data in valsinlist:
-                print 'found dup'
-                prev = cur
-                cur = cur.next
-            else:
-                print 'no dup found'
-                prev = cur
-                cur = cur.next
-        return valsinlist
+def RemoveDups(linkedlist):
+    cur = linkedlist.head
+    setting = set([cur.data])
+    while cur.next:
+        if cur.next.data in setting:
+            cur.next = cur.next.next
+        else:
+            setting.add(cur.next.data)
+            cur = cur.next
+    return LList.viewlinkedlist()
 
 
-LList = LinkedList(8)
+
+LList = UnorderedList()
+LList.add(7)
+LList.add(2)
 LList.add(1)
-LList.add(4)
-LList.add(3)
+LList.add(9)
+LList.add(9)
 LList.add(2)
 LList.add(5)
-LList.add(9)
+LList.add(2)
+LList.add(2)
 
 #LList.viewlinkedlist()
-print LList.RemoveDups()
+print RemoveDups(LList)
+
 
 
 

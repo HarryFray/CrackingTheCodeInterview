@@ -28,24 +28,6 @@ class linked_list:
 
 
 
-linkedlist = linked_list() #creates empty list
-
-linkedlist.head = Node(1) #creates first node (head node)
-sec = Node(2) # creates second node ect.
-thrd = Node(2)
-frth = Node(5)
-
-'''create pointer and new nodes with a loop?'''
-# pointers from one node to another
-linkedlist.head.next = sec
-sec.next = thrd
-thrd.next = frth
-
-
-linkedlist.printList()
-
-
-
 
 
 
