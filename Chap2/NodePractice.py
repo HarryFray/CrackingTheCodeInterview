@@ -77,6 +77,7 @@ class UnorderedList:
         while current != None:
             print current.data,
             current = current.next
+        print ''
 
     ''' appends item to end of list'''
     def append(self,item):

@@ -32,16 +32,13 @@ class DoubleList(object):
             current = current.next
         print ''
 
-KList = DoubleList()
-KList.appendmore([6,7,8,9])
-
-
-
-KList.viewlinkedlist()
-print KList.tail.data
-print KList.head.data
-
-
+    def LLLength(self):
+        count = 1
+        cur = self.head
+        while cur.next:
+            cur = cur.next
+            count += 1
+        return count
 
 
 
